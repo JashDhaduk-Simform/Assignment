@@ -56,6 +56,61 @@
 <pre>
   <code>
     git checkout abc_Project_Setup
-    git cheackout -b abc_sub_Project
+    git checkout -b abc_sub_Project
   </code>
 </pre>
+<ol>
+  <li>Squash
+  <p>Apply multiple commit to the sub-feature branch to perform squashing.</p>
+  <pre>
+  <code>
+    git rebase -i HEAD~n
+  </code>
+</pre>
+    <p>Repalce n with the number of commit you want to commit.</p>
+  </li>
+  <li>Reset
+  <p>Set a commit to the sub-feature branch to perform reset.</p>
+  <pre>
+  <code>
+    git reset HEAD~n
+  </code>
+</pre>
+    <p>Repalce n with the number of commit you want to commit.</p>
+    <p>This reset commit will not discard the commit. instead it step backward to staged commit</p>
+    <pre>
+  <code>
+    git reset --hard HEAD~n
+  </code>
+</pre>
+    <p>This reset command will completely discard the commit we have done as per value of n.</p>
+  </li>
+  <li>Rebase
+  <p>Let's rebase the commit of sub-feature branch to main feature branch.</p>
+  <pre>
+  <code>
+   git checkout abc_sub_Project
+   git rebase abc_Project_Setup
+  </code>
+</pre>
+    <p>This command will apply all the commits to main abc_Project_Setup branch</p>
+  </li>
+  </li>
+  <li>Cherry-pick
+  <p>If we have apply any specific commit to another branch then this is used.</p>
+  <pre>
+  <code>
+   git log abc_Project_Setup --oneline
+  </code>
+</pre>
+     <pre>
+  <code>
+   git cherry-pick <commit-hash>
+     </code>
+  </pre>
+     </code>
+    <p>Any specific commit's hash provided is now apply to main feature branch.</p>
+  </li>
+</ol>
+
+<h1>Git Practice Senario :</h1>
