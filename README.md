@@ -114,3 +114,59 @@
 </ol>
 
 <h1>Git Practice Senario :</h1>
+
+<h3>1) Create a branch from the develop :</h3>
+<li>To create new branch from develop branch execute below code</li>
+<pre>
+  <code>
+    git checkout develop
+    git checkout -b new-feature-branch
+  </code>
+</pre>
+
+<h3>2) Add a commit message hook to the repo :</h3>
+<li>Navigate to the git hooks directory</li>
+<pre>
+  <code>
+    cd .git/hooks/
+  </code>
+</pre>
+<li>create a new commit-hook using below code</li>
+<pre>
+  <code>
+    touch commit-msg
+  </code>
+</pre>
+<li>Now, click on created hook and apply the logic you want apply for commit the message as below</li>
+<pre>
+  <code>
+    commit_msg=$(cat $1)
+    regex="^JIRA-[0-9]+: .+"
+
+    if [[ ! $commit_msg =~ $regex ]]; then
+      echo "Error: Commit message must follow the format 'JIRA-1234: Description'"
+      exit 1
+    fi
+  </code>
+</pre>
+<li>Now apply the hook so that if some one commit the changes they need to follow uper hook format</li>
+<li>This hooks says that : follow the format 'JIRA-1234: Description'</li>
+<pre>
+  <code>
+    chmod +x commit-msg
+  </code>
+</pre>
+
+<h3>3) Perform multiple commits in the new branch :</h3>
+<li>Add a file with some feature so that we can commit it using hook format</li>
+<pre>
+  <code>
+    git commit -m "JIRA-1234: Implemented feature A"
+  </code>
+</pre>
+<li>Do further commit on it</li>
+<pre>
+  <code>
+    git commit -m "JIRA-1235: Fixed bug in feature A"
+  </code>
+</pre>
