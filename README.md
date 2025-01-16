@@ -237,7 +237,7 @@
 </pre>
 
 <h3>11)Create 2 another branch (3rd and 4th) from develop, push read me changes to 3rd brach :</h3>
-<li>Craeting the 3rd branch from develop</li>
+<li>Creating the 3rd branch from develop</li>
 <pre>
   <code>
     git checkout develop
@@ -250,5 +250,49 @@
    git add README.md
    git commit -m "Update README"
    git push origin feature/readme-changes
+  </code>
+</pre>
+
+<h3>12)Cherry pick 3rd branch's commit to 4th branch :</h3>
+<li>Create the 4th branch</li>
+<pre>
+  <code>
+    git checkout -b feature/other-changes
+  </code>
+</pre>
+<li>Now cherry-pick the 3rd branch eith 4th branch</li>
+<pre>
+  <code>
+    git cherry-pick <commit-hash>
+  </code>
+</pre>
+
+<h3>13)Change commit message in 4th branch :</h3>
+<li>Chnge the commit message</li>
+<pre>
+  <code>
+    git commit --amend
+  </code>
+</pre>
+
+<h3>14)add 3 commit to 4th branch and delete last commit :</h3>
+<li>Add the 3 file or feature and then commit it as below</li>
+<pre>
+  <code>
+    git add .
+    git commit -m "first"
+  </code>
+</pre>
+<li>Follow same for other 2 feature</li>
+<li>to delete the last commit run below code</li>
+<pre>
+  <code>
+    git reset --hard HEAD~1
+  </code>
+</pre>
+<li>Now, push the changes of 4th branch to Github</li>
+<pre>
+  <code>
+    git push origin feature/other-changes
   </code>
 </pre>
