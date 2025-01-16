@@ -175,7 +175,7 @@
 <h3>5) PR should be small in size, It's recommended to do one commit per PR. However, based on the situation we can have multiple commits in PR. e.g. if someone is doing 10 bug fixes which are one-liner fixes in such cases instead of 10 different PRs you can do 10 commits in a single PR :</h3>
 <li>So, goto the github and that branch to whom we need to pull request and click on compare and pull and write the appropriate description relate the pull request(PR)</li>
 <li>So, while creating PR we can combine multiple small fixes or commits into single commit PR and all fixes in details in the PR description.</li>
-<img src="https://github.com/JashDhaduk-Simform/Assignment/blob/develop/01-Git/Images/Screenshot%20from%202025-01-16%2011-10-21.png" alt="Screenshot" width="500"/>
+<img src="https://github.com/JashDhaduk-Simform/Assignment/blob/new-feature/01-Git/Images/Screenshot%20from%202025-01-16%2015-08-38.png" alt="Screenshot" width="500"/>
 
 <h3>6) Create another branch from develop given your previous PR is still in review state :</h3>
 <li>So we can create another branch from develop branch as new-feature</li>
@@ -209,6 +209,46 @@
 
 <h3>8) In the meantime, your previous PR has been merged to develop :</h3>
 <li>So, now your previous PR is reviwed and merged by someone after giving final touch.</li>
-<img src="https://github.com/JashDhaduk-Simform/Assignment/blob/develop/01-Git/Images/Screenshot%20from%202025-01-16%2011-10-21.png" alt="Screenshot" width="500"/>
+<img src="https://github.com/JashDhaduk-Simform/Assignment/blob/new-feature/01-Git/Images/Screenshot%20from%202025-01-16%2015-14-56.png" alt="Screenshot" width="500"/>
 
 <h3>9) Create a PR for the current branch given your branch should be up to date with develop branch :</h3>
+<li>So to make the current branch up-to-date with develop branch follow below code</li>
+<pre>
+  <code>
+    git fetch origin
+    git rebase origin/develop
+  </code>
+</pre>
+<li>Now create th PR as we have created before as develop as base branch and new-feature as compare branch</li>
+<img src="https://github.com/JashDhaduk-Simform/Assignment/blob/new-feature/01-Git/Images/Screenshot%20from%202025-01-16%2018-38-14.png" alt="Screenshot" width="500"/>
+
+<h3>10)For any new build release add a version tag to that specific commit to keep track of each version :</h3>
+<li>So to add version tag follow the commands</li>
+<pre>
+  <code>
+    git tag -a v1.0.0 -m "Release version 1.0.0"
+  </code>
+</pre>
+<li>Now push it to the Github</li>
+<pre>
+  <code>
+   git push origin v1.0.0
+  </code>
+</pre>
+
+<h3>11)Create 2 another branch (3rd and 4th) from develop, push read me changes to 3rd brach :</h3>
+<li>Craeting the 3rd branch from develop</li>
+<pre>
+  <code>
+    git checkout develop
+    git checkout -b feature/readme-changes
+  </code>
+</pre>
+<li>Add the read me changes and push it</li>
+<pre>
+  <code>
+   git add README.md
+   git commit -m "Update README"
+   git push origin feature/readme-changes
+  </code>
+</pre>
