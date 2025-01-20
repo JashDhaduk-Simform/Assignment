@@ -12,6 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
 }
 
 .nav-main{
@@ -125,6 +127,7 @@ main{
     width: 77vw;
     margin: 20px 0px;
     overflow: hidden;
+    position: relative;
 }
 
 .content-head{
@@ -134,6 +137,7 @@ main{
     height: 6vh;
     border-bottom: 0.1px solid gray;
 }
+
 .content-head button {
     margin-right: 20px;
     height: 4vh;
@@ -177,26 +181,20 @@ main{
     margin-left: 10px;
 }
 
-/* .with-sidebar{
-    display: flex;
-}
-
 .sidebar-btn {
     position: absolute;
-    right: 50px;
-    bottom: 220px;
-    background-color: #ff5722;
-    color: white;
+    right: 0;
+    bottom: 150px;
+    background-color: white;
+    color: black;
     border: none;
-    padding: 15px 20px;
+    padding: 30px 10px;
     font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .sidebar-btn:hover {
     background-color: #e64a19;
-} */
+}
 
 .content-list{
     display: flex;
